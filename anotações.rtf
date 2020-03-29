@@ -4,11 +4,11 @@
 {\colortbl;\red255\green255\blue255;\red140\green211\blue254;\red23\green23\blue23;\red202\green202\blue202;
 \red194\green126\blue101;\red0\green0\blue0;\red0\green0\blue0;\red89\green138\blue67;\red202\green202\blue202;
 \red89\green138\blue67;\red212\green214\blue154;\red0\green0\blue233;\red0\green0\blue233;\red70\green137\blue204;
-}
+\red43\green44\blue39;}
 {\*\expandedcolortbl;;\cssrgb\c61176\c86275\c99608;\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;
 \cssrgb\c80784\c56863\c47059;\cssrgb\c0\c0\c0;\csgray\c0\c0;\cssrgb\c41569\c60000\c33333;\cssrgb\c83137\c83137\c83137;
 \cssrgb\c41569\c60000\c33333;\cssrgb\c86275\c86275\c66667;\cssrgb\c0\c0\c93333;\cssrgb\c0\c0\c93333;\cssrgb\c33725\c61176\c83922;
-}
+\cssrgb\c22353\c22745\c20392;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh16000\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
@@ -209,6 +209,10 @@ Front-End:\
 	\
 	- Cliente HTTP: respons\'e1vel por realizar as chamadas \'e0 API\
 		- npm install axios\
+\
+	- Internacionaliza\'e7\'e3o:\
+		- Classe Intl\
+			- usado por exemplo pra formatar campos monet\'e1rios\
 	\
 	- executar o front-end: npm start\
 		- executa na porta 3000\
@@ -219,8 +223,58 @@ Mobile:\
 	- O dispositivo passa a entender c\'f3digo JavaScript e a interface gerada \'e9 totalmente nativa\
 	- Expo auxilia no desenvolvimento mobile\
 		- deixa de ser necess\'e1ria a instala\'e7\'e3o das SDKs do android e do iOS\
-		\
+		- npm install -g expo-cli\
 \
+	- para criar o projeto mobile:\
+		- expo init mobile\
+			- expo-template-blank\
+\
+	- executar o projeto:\
+		- yarn start\
+		- vai gerar um qrcode que pode ser lido pelo dispositivo atrav\'e9s do app Expo\
+	\
+	- Elementos:\
+		- View\
+		- Text\
+	- Estiliza\'e7\'e3o \'e9 por elemento, atrav\'e9s da tag style\
+		- style=\{styles.container\}	\
+		- as propriedades da estiliza\'e7\'e3o s\'e3o escritas em camelCase e seus valores se n\'e3o forem num\'e9ricos obrigatoriamente precisam usam aspas.\
+	\
+	- Assim como no front-end, componentes s\'e3o fun\'e7\'f5es\
+		- a diferen\'e7a \'e9 que o arquivo de estiliza\'e7\'e3o \'e9 extens\'e3o js\
+	\
+	- Rotas:\
+		- npm install @react-navigation/native\
+	\cf6 \cb7 	- \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+		\
+		- tipos de navega\'e7\'e3o:\
+			- Menu lateral (drawer)\
+			- Menu rodap\'e9 (abas)\
+			- Por bot\'f5es (stack)\
+				- npm install @react-navigation/stack\
+\
+	- Para a\'e7\'f5es em bot\'f5es passando par\'e2metros usar uma arrowfunctions () => \{\}\
+\
+	- Para listas em tela usar o component FlatList\
+	\
+	- Envio de email:\
+		- expo install expo-mail-composer\
+\
+	- Cliente REST:\
+		- npm install axios\
+\
+	- useEffect \'e9 usado para executar fun\'e7\'f5es quando a tela carrega\
+\
+	- Internacionaliza\'e7\'e3o (por exemplo para formatar valores num\'e9ricos)\
+		- npm install intl\
+		- define na app.js o idioma\
+\
+	- quando em uma vari\'e1vel texto \'e9 necess\'e1ria a concatena\'e7\'e3o de vari\'e1veis, usa crase ao inv\'e9s de aspas e $\{variavel\} para concatenar o valor:\
+		`Esse \'e9 um texto concatenado com uma $\{variavel\}`\
+\
+	- para anexar dois vetores em um s\'f3:\
+		setIncidents([\'85 primeirovetor, \'85 segundovetor]);\
 \
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
