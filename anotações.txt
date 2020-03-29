@@ -1,0 +1,300 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red140\green211\blue254;\red23\green23\blue23;\red202\green202\blue202;
+\red194\green126\blue101;\red0\green0\blue0;\red0\green0\blue0;\red89\green138\blue67;\red202\green202\blue202;
+\red89\green138\blue67;\red212\green214\blue154;\red0\green0\blue233;\red0\green0\blue233;\red70\green137\blue204;
+\red43\green44\blue39;}
+{\*\expandedcolortbl;;\cssrgb\c61176\c86275\c99608;\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;
+\cssrgb\c80784\c56863\c47059;\cssrgb\c0\c0\c0;\csgray\c0\c0;\cssrgb\c41569\c60000\c33333;\cssrgb\c83137\c83137\c83137;
+\cssrgb\c41569\c60000\c33333;\cssrgb\c86275\c86275\c66667;\cssrgb\c0\c0\c93333;\cssrgb\c0\c0\c93333;\cssrgb\c33725\c61176\c83922;
+\cssrgb\c22353\c22745\c20392;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh16000\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Geral:\
+	Estrutura do projeto:\
+		- backend\
+		- frontend\
+		- mobile\
+\
+\
+Visual Studio Code:\
+	- abrir o vscode pelo terminar: code .\
+		- cmd shift p: install code\
+	- facilitador para escrever os componentes html: div.teste\
+		- ctrl shift p: settings\
+		- adiciona as seguintes linhas:\
+			
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 "emmet.syntaxProfiles"\cf4 \strokec4 : \{\cf2 \strokec2 "javascript"\cf4 \strokec4 : \cf5 \strokec5 "jsx"\cf4 \strokec4 \},\cb1 \
+			\cf2 \cb3 \strokec2 "emmet.includeLanguages"\cf4 \strokec4 : \{\cf2 \strokec2 "javascript"\cf4 \strokec4 : \cf5 \strokec5 "javascriptreact"\cf4 \strokec4 \},\cb1 \
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0  \
+		\
+\
+Back-End:\
+	- em Node js\
+	- criar o projeto: npm init -y\
+		- cria o arquivo package.json\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 	- o arquivo app.js \'e9 o arquivo principal da aplica\'e7\'e3o, \'e9 onde inicia a aplica\'e7\'e3o, como se fosse a main\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 	- Rotas:\
+		- Express\
+			- npm install express\
+			- Microframework ajuda a configurar a app do zero\
+\
+		-  \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 M\'e9todos HTTP:\strokec4 \
+			- \strokec8 GET: buscar informa\'e7\'e3o\strokec4 \
+			- \strokec8 POST: criar informa\'e7\'e3o\strokec4 \
+			- \strokec8 PUT: alterar informa\'e7\'e3o\strokec4 \
+			- \strokec8 DELETE: remover informa\'e7\'e3o\
+\strokec4 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 \cb7 \outl0\strokewidth0 		- Padr\'e3o de rota: Rota/Recurso\cf6 \cb7 \outl0\strokewidth0 \strokec4 	\
+	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 		- \strokec8 criando uma rota raiz: \'91/\'91\strokec4 \
+\
+		- \strokec8 Tipos de par\'e2metros:\strokec4 \
+			- \strokec8 Query Params: par\'e2metros nomeados enviados na rota ap\'f3s "?"\
+				- filtros, pagina\'e7\'e3o\
+				\cf6 \cb7 \outl0\strokewidth0 - rota: /users   /users?nome=Diego\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 					- const params = request.query;\cf6 \cb7 \outl0\strokewidth0 \strokec4 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 			- \strokec8 Route Params: par\'e2metros utilizados para identificar recursos\
+					- \
+				- \cf6 \cb7 \outl0\strokewidth0 rota: /users/:id   /users/1\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf6 \cb7 				- const params = request.params;\cf6 \cb7 \outl0\strokewidth0 \strokec4 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 			- \strokec8 Request Body: o corpo da requisi\'e7\'e3o\
+				- criar ou alterar recursos\
+					- const body = request.body;\strokec4 \
+\
+		- para a aplica\'e7\'e3o entender que vamos usar objetos json, adicionar:\
+			- app.use(express.json());\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 \cb7 \outl0\strokewidth0 		- para retornar um texto em uma rota\
+			- return response.send('Hello World');\
+\
+		- para retornar um objeto: \
+			- \cf6 \cb7 \outl0\strokewidth0 \strokec2 response\strokec4 .\strokec11 json\strokec4 (\strokec2 ongs\strokec4 );
+\f1 \cf4 \cb1 \
+
+\f0 \cf6 \cb7 \outl0\strokewidth0 \
+\
+		- Ferramentas para testar requisi\'e7\'f5es http: imnsonia e postman\cf6 \cb7 \outl0\strokewidth0 \strokec4 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 \
+\
+	- Banco de dados\
+\
+		- Tipos de bancos de dados:\
+			- \strokec8 SQL: MySQL, PostgreSQL, Oracle, SQLite...\strokec4 \
+			- \strokec8 NoSQL: MongoDB, CouchDB\strokec4 \
+\
+		- Tipos de abordagens de uso do banco de dados na aplica\'e7\'e3o:\
+			- \strokec8 Driver: SELECT * FROM USER;\strokec4 \
+			- \strokec8 QueryBuilder: table('user').select('*').where(); => knex\
+\
+		- Knex {\field{\*\fldinst{HYPERLINK "http://knexjs.org/"}}{\fldrslt 
+\f2 \cf12 \cb1 \ul \ulc12 \strokec12 http://knexjs.org/}}\
+			- \'c9 um querybuilder\
+			- npm install knex\
+			- instalar o drive:\
+				- npm install sqlite3\
+			- npx knex init\
+				- vai criar o arquivo de configura\'e7\'e3o do knex\
+				- knexfile.js\
+		\
+\
+			- Migration: \
+				- configurar na arquivo do knex onde ficar\'e3o as migrations\
+				- criar uma migration:\
+					- knex migrate:make create_ongs\
+				- userNullAsDefault no arquivo do knex -> sqlite n\'e3o suporta null como valor padr\'e3o\
+				- no arquivo de migration que foi criado devem ser constru\'eddas as tabelas (ver doc do knex)\
+				- m\'e9todo up \'e9 a execu\'e7\'e3o da migration e down \'e9 o rollback\
+				- para executar as migrations: \
+					- npx knex migrate:latest\
+				- desfazer a \'faltima migration:\
+					- npx knex migrate:rollback\
+				- comandos knex: npx knex\
+\
+	- pacote crypto para gerar um token por exemplo\
+	- async e await s\'e3o usados pra requisi\'e7\'f5es ass\'edncronas, quando \'e9 necess\'e1rio aguardar o retorno\
+	- CORS: seguran\'e7a, determina quem pode acessar a aplica\'e7\'e3o\
+		- o atributo origin determina o endere\'e7o que pode acessar essa aplica\'e7\'e3o\
+		
+\f1 \cf4 \cb1 \strokec4 \
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+	- node app.js executa a aplica\'e7\'e3o\
+	- para n\'e3o precisar reiniciar a aplica\'e7\'e3o a cada mudan\'e7a, instalar o pacote nodemon \
+		- npm install nodemon -D\
+	- executar o servidor: npm start\
+		- ajustar no package json o script start\
+\
+	- Valida\'e7\'f5es\
+		- Celebrate: {\field{\*\fldinst{HYPERLINK "https://github.com/arb/celebrate"}}{\fldrslt 
+\f2 \cf13 \expnd0\expndtw0\kerning0
+\ul \ulc13 https://github.com/arb/celebrate}}\
+		- Valida\'e7\'f5es dos campos vindos do usu\'e1rio, par\'e2metros das rotas \
+		- npm install celebrate\
+		- tratar retorno dos erros usando a biblioteca errors no index.js, pra n\'e3o retornar error 500\
+\
+	- Testes\
+		- Jest\
+			- Framework de testes\
+			- npm install jest -D\
+			- na raiz do projeto executar npx jest \'97init para iniciar o jest\
+				- sim para adicionar um script dentro do package.json\
+				- node para executar os testes\
+				- n\'e3o para adicionar coverage \
+				- sim para cada vari\'e1vel n\'e3o seja v\'e1lido para outro\
+		- npm test para rodar os testes\
+		- npm install cross-env \
+			- permite que no package json configuremos o profile de testes 
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 "test"\cf4 \strokec4 : \cf5 \strokec5 "cross-env NODE_ENV=test jest"\cf4 \cb1 \strokec4 \
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 		- Supertest: fazer requisi\'e7\'f5es http para os testes\
+			- npm install supertest -D\
+\
+\
+Front-End:\
+\
+	- Usa React\
+	- npx \'e9 como o npm mas ao inv\'e9s de instalar um pacote ele apenas executa o pacote sem instalar\
+	- criar o projeto: npx create-react-app frontend\
+	- limpando a estrutura do projeto criado:\
+		- Readme\
+		- app.css\
+		- app.test.js\
+		- index.css\
+		- logo.svg\
+		- setupTests\
+		- serviceWorker\
+		- manifest.json\
+		- robots.txt\
+		- logos\
+	- App.js \'e9 o arquivo de start do frontend\
+	- Componente: component \'e9 uma fun\'e7\'e3o\
+		- export default function Componente()\{ aqui dentro vai o js return ( aqui dentro vai o html) \}\
+	- JSX: quando o html t\'e1 integrado dentro do html\
+	- Propriedades: quase mesma coisa que os atributos do html\
+	- Estado: usando o pacote useState do react, cada vari\'e1vel tem uma fun\'e7\'e3o que deve atualizar seu valor.\
+		- useState retorna um array de duas posi\'e7\'f5es: [variavel, fun\'e7\'e3o respons\'e1vel por alterar o valor]\
+		- 
+\f1 \cf14 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec14 const\cf4 \strokec4  [\cf2 \strokec2 name\cf4 \strokec4 , \cf2 \strokec2 setName\cf4 \strokec4 ] = \cf11 \strokec11 useState\cf4 \strokec4 (\cf5 \strokec5 ''\cf4 \strokec4 );\cb1 \
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+	- fontes do google: fonts.google.com\
+	- pacote de \'edcones:\
+		- feather icons\
+			- npm install react-icons\
+\
+	- Rotas:\
+		- pacote react router dom\
+			- npm install react-router-dom\
+	\
+	- Cliente HTTP: respons\'e1vel por realizar as chamadas \'e0 API\
+		- npm install axios\
+\
+	- Internacionaliza\'e7\'e3o:\
+		- Classe Intl\
+			- usado por exemplo pra formatar campos monet\'e1rios\
+	\
+	- executar o front-end: npm start\
+		- executa na porta 3000\
+\
+Mobile:\
+\
+	- Usa React Native\
+	- O dispositivo passa a entender c\'f3digo JavaScript e a interface gerada \'e9 totalmente nativa\
+	- Expo auxilia no desenvolvimento mobile\
+		- deixa de ser necess\'e1ria a instala\'e7\'e3o das SDKs do android e do iOS\
+		- npm install -g expo-cli\
+\
+	- para criar o projeto mobile:\
+		- expo init mobile\
+			- expo-template-blank\
+\
+	- executar o projeto:\
+		- yarn start\
+		- vai gerar um qrcode que pode ser lido pelo dispositivo atrav\'e9s do app Expo\
+	\
+	- Elementos:\
+		- View\
+		- Text\
+	- Estiliza\'e7\'e3o \'e9 por elemento, atrav\'e9s da tag style\
+		- style=\{styles.container\}	\
+		- as propriedades da estiliza\'e7\'e3o s\'e3o escritas em camelCase e seus valores se n\'e3o forem num\'e9ricos obrigatoriamente precisam usam aspas.\
+	\
+	- Assim como no front-end, componentes s\'e3o fun\'e7\'f5es\
+		- a diferen\'e7a \'e9 que o arquivo de estiliza\'e7\'e3o \'e9 extens\'e3o js\
+	\
+	- Rotas:\
+		- npm install @react-navigation/native\
+	\cf6 \cb7 	- \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec15 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view\cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+		\
+		- tipos de navega\'e7\'e3o:\
+			- Menu lateral (drawer)\
+			- Menu rodap\'e9 (abas)\
+			- Por bot\'f5es (stack)\
+				- npm install @react-navigation/stack\
+\
+	- Para a\'e7\'f5es em bot\'f5es passando par\'e2metros usar uma arrowfunctions () => \{\}\
+\
+	- Para listas em tela usar o component FlatList\
+	\
+	- Envio de email:\
+		- expo install expo-mail-composer\
+\
+	- Cliente REST:\
+		- npm install axios\
+\
+	- useEffect \'e9 usado para executar fun\'e7\'f5es quando a tela carrega\
+\
+	- Internacionaliza\'e7\'e3o (por exemplo para formatar valores num\'e9ricos)\
+		- npm install intl\
+		- define na app.js o idioma\
+\
+	- quando em uma vari\'e1vel texto \'e9 necess\'e1ria a concatena\'e7\'e3o de vari\'e1veis, usa crase ao inv\'e9s de aspas e $\{variavel\} para concatenar o valor:\
+		`Esse \'e9 um texto concatenado com uma $\{variavel\}`\
+\
+	- para anexar dois vetores em um s\'f3:\
+		setIncidents([\'85 primeirovetor, \'85 segundovetor]);\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 Deloy:\
+	- Node (backend)\
+		- Heroku: em fase inicial tem plano gratuito\
+			- deploy heroku node no canal da rocketseat no youtube\
+		- Digital ocean: em fases avan\'e7adas\
+			- deploy de apps node,js no canal do youtube\
+		- AWS, google cloud, Azure\
+	- React (frontend)\
+		- netlify: em fase inicial\
+	- React Native (mobile)\
+		- gerando apk expo no canal do youtube\
+\
+Estudos:\
+	- Padr\'f5es de c\'f3digo: ESLint, Prettier\
+	- Autentica\'e7\'e3o JWT\
+	- Styled Components\
+\
+\
+\
+		}
